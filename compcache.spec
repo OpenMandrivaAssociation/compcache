@@ -1,6 +1,6 @@
 Name:    compcache
 Version: 0.6.2
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: Compcache (compressed caching) provides the ability to use part of the RAM as compressed swap
 License: BSD and GPLv2
 URL:     http://code.google.com/p/compcache/
