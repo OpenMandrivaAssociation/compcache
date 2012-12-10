@@ -50,3 +50,19 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/sysconfig/%name
 %{_sbindir}/rzscontrol
 %{_mandir}/man1/rzscontrol.1*
+
+
+%changelog
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.6.2-3mdv2011.0
++ Revision: 610154
+- rebuild
+
+* Fri May 28 2010 Eugeni Dodonov <eugeni@mandriva.com> 0.6.2-2mdv2010.1
++ Revision: 546478
+- Added initscript and configuration file.
+
+* Thu May 13 2010 Eugeni Dodonov <eugeni@mandriva.com> 0.6.2-1mdv2010.1
++ Revision: 544713
+- imported compcache
+- Created package structure for compcache.
+

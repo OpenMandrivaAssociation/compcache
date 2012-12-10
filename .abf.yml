@@ -1,4 +1,2 @@
 sources:
-  "compcache-0.6.2.tar.gz:"	d2844aff60517c93477031df0705553f1ee7e743
-  "compcache.init:"	d2a248897f8ebc4fac412ee72ac707e7e3648f1f
-  "compcache.sysconfig:"	4a23c6ed361d7217606669bd4e306bce67a3d351
+  "compcache-0.6.2.tar.gz": d2844aff60517c93477031df0705553f1ee7e743
