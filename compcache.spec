@@ -1,14 +1,13 @@
-Name:    compcache
-Version: 0.6.2
-Release: 4
-Summary: Provides the ability to use part of the RAM as compressed swap
-License: BSD and GPLv2
-URL:     http://code.google.com/p/compcache/
-Group:   System/Kernel and hardware
-
-Source0: http://compcache.googlecode.com/files/%{name}-%{version}.tar.gz
-Source1: compcache.init
-Source2: compcache.sysconfig
+Summary:	Compcache provides the ability to use part of the RAM as compressed swap
+Name:		compcache
+Version:	0.6.2
+Release:	4
+License:	BSD and GPLv2+
+Group:		System/Kernel and hardware
+Url:		http://code.google.com/p/compcache/
+Source0:	http://compcache.googlecode.com/files/%{name}-%{version}.tar.gz
+Source1:	compcache.init
+Source2:	compcache.sysconfig
 
 %description
 Compcache (compressed caching) provides the ability to use part of the RAM as
@@ -18,6 +17,15 @@ decompressing it when moving it out of swap. This is a classic time-space
 trade-off. You effectively get more memory, but some of it is slower than
 normal RAM due to the CPU time required to compress and decompress the swapped
 pages.
+
+%files
+%doc README Changelog
+%{_initrddir}/%{name}
+%config %{_sysconfdir}/sysconfig/%{name}
+%{_sbindir}/rzscontrol
+%{_mandir}/man1/rzscontrol.1*
+
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q
@@ -37,26 +45,4 @@ install -m0755 compcache.sysconfig %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 install -m0755 sub-projects/rzscontrol/rzscontrol %{buildroot}%{_sbindir}
 install -m0755 sub-projects/rzscontrol/rzscontrol %{buildroot}%{_sbindir}
 install -m0644 sub-projects/rzscontrol/man/rzscontrol.1 %{buildroot}%{_mandir}/man1
-
-%files
-%doc README Changelog
-%{_initrddir}/%name
-%config %{_sysconfdir}/sysconfig/%name
-%{_sbindir}/rzscontrol
-%{_mandir}/man1/rzscontrol.1*
-
-
-%changelog
-* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.6.2-3mdv2011.0
-+ Revision: 610154
-- rebuild
-
-* Fri May 28 2010 Eugeni Dodonov <eugeni@mandriva.com> 0.6.2-2mdv2010.1
-+ Revision: 546478
-- Added initscript and configuration file.
-
-* Thu May 13 2010 Eugeni Dodonov <eugeni@mandriva.com> 0.6.2-1mdv2010.1
-+ Revision: 544713
-- imported compcache
-- Created package structure for compcache.
 
