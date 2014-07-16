@@ -1,12 +1,12 @@
 Summary:	Compcache provides the ability to use part of the RAM as compressed swap
 Name:		compcache
 Version:	0.6.2
-Release:	4
+Release:	6
 License:	BSD and GPLv2+
 Group:		System/Kernel and hardware
 Url:		http://code.google.com/p/compcache/
 Source0:	http://compcache.googlecode.com/files/%{name}-%{version}.tar.gz
-Source1:	compcache.init
+Source1:	compcache.service
 Source2:	compcache.sysconfig
 
 %description
@@ -20,7 +20,7 @@ pages.
 
 %files
 %doc README Changelog
-%{_initrddir}/%{name}
+%{_unitdir}/%{name}*
 %config %{_sysconfdir}/sysconfig/%{name}
 %{_sbindir}/rzscontrol
 %{_mandir}/man1/rzscontrol.1*
@@ -29,18 +29,18 @@ pages.
 
 %prep
 %setup -q
-install -m0755 %{SOURCE1} compcache.init
+install -m0755 %{SOURCE1} compcache.service
 install -m0755 %{SOURCE2} compcache.sysconfig
 
 %build
 %make -C sub-projects/rzscontrol/
 
 %install
-mkdir -p %{buildroot}%{_initrddir}
+mkdir -p %{buildroot}%{_unitdir}
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
 mkdir -p %{buildroot}%{_sbindir}
 mkdir -p %{buildroot}%{_mandir}/man1
-install -m0755 compcache.init %{buildroot}%{_initrddir}/%{name}
+install -m755 compcache.service -D %{buildroot}%{_unitdir}/%{name}.service
 install -m0755 compcache.sysconfig %{buildroot}%{_sysconfdir}/sysconfig/%{name}
 install -m0755 sub-projects/rzscontrol/rzscontrol %{buildroot}%{_sbindir}
 install -m0755 sub-projects/rzscontrol/rzscontrol %{buildroot}%{_sbindir}

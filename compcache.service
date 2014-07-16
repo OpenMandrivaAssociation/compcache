@@ -1,0 +1,14 @@
+[Unit]
+Description=Compcache uses part of the RAM as a compressed swap device
+Requires=rpcbind.service
+After=syslog.target network.target rpcbind.service 
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+EnvironmentFile=/etc/sysconfig/network
+EnvironmentFile=/etc/sysconfig/compcache
+ExecStart=/usr/sbin/rzscontrol
+
+[Install]
+WantedBy=multi-user.target
