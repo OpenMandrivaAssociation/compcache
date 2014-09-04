@@ -1,7 +1,7 @@
 Summary:	Compcache provides the ability to use part of the RAM as compressed swap
 Name:		compcache
 Version:	0.6.2
-Release:	6
+Release:	8
 License:	BSD and GPLv2+
 Group:		System/Kernel and hardware
 Url:		http://code.google.com/p/compcache/
@@ -24,6 +24,15 @@ pages.
 %config %{_sysconfdir}/sysconfig/%{name}
 %{_sbindir}/rzscontrol
 %{_mandir}/man1/rzscontrol.1*
+
+%post
+%systemd_post %{name}.service
+
+%preun
+%systemd_preun %{name}.service
+
+%postun
+%systemd_postun_with_restart %{name}.service
 
 #----------------------------------------------------------------------------
 
