@@ -1,7 +1,7 @@
 Summary:	Compcache provides the ability to use part of the RAM as compressed swap
 Name:		compcache
 Version:	0.6.2
-Release:	9
+Release:	10
 License:	BSD and GPLv2+
 Group:		System/Kernel and hardware
 Url:		http://code.google.com/p/compcache/
