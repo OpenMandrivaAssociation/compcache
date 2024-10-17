@@ -4,7 +4,7 @@ Version:	0.6.2
 Release:	10
 License:	BSD and GPLv2+
 Group:		System/Kernel and hardware
-Url:		http://code.google.com/p/compcache/
+Url:		https://code.google.com/p/compcache/
 Source0:	http://compcache.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1:	compcache.service
 Source2:	compcache.sysconfig
