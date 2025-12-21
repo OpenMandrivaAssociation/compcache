@@ -9,6 +9,7 @@ Source0:	http://compcache.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1:	compcache.service
 Source2:	compcache.sysconfig
 
+BuildRequires:	make
 %description
 Compcache (compressed caching) provides the ability to use part of the RAM as
 compressed swap. In other words, you can take a portion of your RAM (default
